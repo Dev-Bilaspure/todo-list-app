@@ -13,7 +13,7 @@ const taskList = {
 }
 
 const TaskList = ({sendCardInfo}) => {
-  const { tasks, removeAllTask } = useContext(TaskContext);
+  const { tasks } = useContext(TaskContext);
 
   return (
     <div>

@@ -54,7 +54,7 @@ const TodoForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     todo ? addTask(todo, discribe) : alert("Empty title is not allowed");
-    todo && props.history.push("/");
+    todo && props.history.push("/todo-list-app/");
     e.target.elements.task.value='';
     e.target.elements.discribe.value='';
     setTodo('');
@@ -96,7 +96,7 @@ const TodoForm = (props) => {
         </div>
       </form>
       <div className="ui card centered" style={{width: "25%"}}>
-        <Link to="/">
+        <Link to="/todo-list-app/">
           <button className="ui button blue"  style={{fontSize: "1em", width: "100%"}}>
             Go To Todo List
           </button>

@@ -9,7 +9,7 @@ const TaskDetails = ({cardInfo, history}) => {
 
   const handleClickOk = () => {
     updateTask(cardInfo.id, title, detail);
-    history.push("/");
+    history.push("/todo-list-app/");
   }
   
   return (
@@ -55,7 +55,7 @@ const TaskDetails = ({cardInfo, history}) => {
             <button 
               className="ui button red"  
               style={{fontSize: "1em", width: "100%", paddingLeft: "0.2rem", paddingRight: "0.2rem"}}
-              onClick={() => history.push("/")}
+              onClick={() => history.push("/todo-list-app/")}
               disabled={cardInfo.title===title && cardInfo.detail===detail}
             >Discard Changes</button>
           </div>

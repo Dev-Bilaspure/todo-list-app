@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { TaskContext } from '../contexts/TaskContext';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const taskCardStyle = {
@@ -15,13 +14,12 @@ const trashButtonStyle = {
   float: "right"
 }
 const TaskCard = ({task, sendCardInfo}) => {
-  const { removeTask } = useContext(TaskContext);
   
   let resizeDiscription = (discrip) => {
     let str = '';
     if(discrip.length>10) {
       
-      for(let i=0;i<10;i++) {
+      for(let i=0;i<20;i++) {
         str+=discrip[i];
       }
       str+='...';

@@ -22,7 +22,7 @@ const App = () => {
       <Header />
         <Switch>
           <Route 
-            exact path="/" 
+            exact path="/todo-list-app/" 
             render={(props) => (<TaskList
               {...props}
               sendCardInfo={cardInfo => setCardInfo(cardInfo)}

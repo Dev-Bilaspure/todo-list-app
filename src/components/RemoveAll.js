@@ -6,7 +6,7 @@ const RemoveAll = ({ history }) => {
 
   const handleYesRemoveAll = () => {
     removeAllTask();
-    history.push('/');
+    history.push('/todo-list-app/');
   }
   return (
     <div className="ui raised very padded text container segment"  style={{paddingBottom: "2.5rem", paddingTop: "2.5rem", width: "35%"}}>
@@ -22,7 +22,7 @@ const RemoveAll = ({ history }) => {
         <div className="ui card centered" style={{width: "30%", marginTop: "1.5rem"}}>
           <button 
             className="ui button blue" 
-            onClick={() => history.push("/")}
+            onClick={() => history.push("/todo-list-app/")}
           >No, Cancel</button>
         </div>
       </div>

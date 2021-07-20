@@ -6,7 +6,7 @@ const RemoveTask = ({cardInfo, history}) => {
 
   const handleClickYesRemove = () => {
     removeTask(cardInfo.id);
-    history.push("/")
+    history.push("/todo-list-app/")
   }
 
   let resizedTitle = (title) => {
@@ -37,7 +37,7 @@ const RemoveTask = ({cardInfo, history}) => {
         <div className="ui card centered" style={{width: "25%", marginTop: "1.5rem"}}>
           <button 
             className="ui button blue" 
-            onClick={() => history.push("/")}
+            onClick={() => history.push("/todo-list-app/")}
           >No, Cancel</button>
         </div>
       </div>
