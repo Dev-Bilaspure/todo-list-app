@@ -5,6 +5,8 @@ import TaskList from './components/TaskList';
 import TaskContextProvider from './contexts/TaskContext';
 import TaskDetails from './components/TaskDetails';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import RemoveAll from './components/RemoveAll';
+import RemoveTask from './components/RemoveTask';
 
 const App = () => {
   const [cardInfo, setCardInfo] = useState({
@@ -26,9 +28,11 @@ const App = () => {
               sendCardInfo={cardInfo => setCardInfo(cardInfo)}
             />)}
           />
-          <Route exact path="/" component={TaskList }/>
+
+          {/*<Route exact path="/" component={TaskList }/>*/}
+
           <Route exact path="/add-task" component={TodoForm } />
-          {/*<Route path="/task/:id" component={TaskDetails} />*/}
+
           <Route 
             exact path="/task/:id" 
             render={(props) => (<TaskDetails
@@ -36,10 +40,17 @@ const App = () => {
               cardInfo={cardInfo}
             />)}
           />
-          
+
+          <Route exact path="/remove_all_task" component={RemoveAll} />
+
+          <Route 
+            exact path="/remove_task/:id" 
+            render={(props) => (<RemoveTask
+              {...props}
+              cardInfo={cardInfo}
+            />)}
+          />
         </Switch>
-      
-        
       </TaskContextProvider>
 
     </BrowserRouter>

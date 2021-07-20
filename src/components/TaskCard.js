@@ -21,7 +21,7 @@ const TaskCard = ({task, sendCardInfo}) => {
     let str = '';
     if(discrip.length>10) {
       
-      for(let i=0;i<18;i++) {
+      for(let i=0;i<10;i++) {
         str+=discrip[i];
       }
       str+='...';
@@ -55,8 +55,17 @@ const TaskCard = ({task, sendCardInfo}) => {
           
           
         </div>
-        <button className="ui red basic button" style={trashButtonStyle} onClick={() => removeTask(task.id)}>
-          Remove
+        <button className="ui red basic button" style={trashButtonStyle}>
+          <Link to={`/remove_task/${task.id}`} onClick={() => {
+            let obj = {
+              id: task.id,
+              title: task.todo,
+              detail: task.discription
+            }
+            sendCardInfo(obj) 
+          }} style={{color: "rgb(224,10,10)"}}>
+            Remove
+          </Link>
         </button> 
       </div>
 

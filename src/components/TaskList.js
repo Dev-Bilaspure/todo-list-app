@@ -28,9 +28,14 @@ const TaskList = ({sendCardInfo}) => {
         })
       }
       <div className="ui card centered" style={{width: '9rem', marginTop: '3rem'}}>
-        <button className="ui red button" onClick={removeAllTask} disabled={!tasks.length}>
-          Remove All
-        </button>
+        
+          <button className="ui red button" disabled={!tasks.length} style={{width: "100%"}}>
+            <Link to="/remove_all_task" style={{color: "white"}}>
+              Remove All
+            </Link> 
+          </button>
+        
+        
       </div>
 
       <div className="ui card centered" style={{width: '9rem', marginTop: '2rem'}}>
