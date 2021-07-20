@@ -1,22 +1,22 @@
 import React, { useContext } from 'react';
 import { TaskContext } from '../contexts/TaskContext';
-import TaskDetails from './TaskDetails';
+import { Link } from 'react-router-dom';
 
 const taskCardStyle = {
   borderRadius: "0.5em", 
   paddingLeft: "1.8em",
   paddingRight: "1.8em",
   fontSize: "0.7em",
-  paddingTop: "1.1em",
+  paddingTop: "0.8em",
   paddingBottom: "4.3em",
   width: "100%",
 }
 const trashButtonStyle = {
   float: "right"
 }
-const TaskCard = ({task}) => {
+const TaskCard = ({task, sendCardInfo}) => {
   const { removeTask } = useContext(TaskContext);
-
+  
   let resizeDiscription = (discrip) => {
     let str = '';
     if(discrip.length>10) {
@@ -25,20 +25,35 @@ const TaskCard = ({task}) => {
         str+=discrip[i];
       }
       str+='...';
+      return(str);
     }
-    return(str);
+    else
+      return(discrip);
+    
   }
 
   return (
     <div className="ui raised very padded text container segment" style={taskCardStyle}>
       <div className="item">
         <div className="content" style={{float: "left", marginTop: "0.3em", marginBottom: "0.3em"}}>
-            <div className="header" onClick={<TaskDetails task={task}/>}>
-              <h3>{task.todo}</h3>
-            </div>
-            <div>
-              {resizeDiscription(task.discription)}
-            </div>
+         
+            <Link to={`/task/${task.id}`} onClick={() => {
+              let obj = {
+                id: task.id,
+                title: task.todo,
+                detail: task.discription
+              }
+              sendCardInfo(obj) 
+            }}>
+              <div className="header">
+                <h3>{task.todo}</h3>
+              </div>
+              <div>
+                {resizeDiscription(task.discription)}
+              </div>
+            </Link>
+          
+          
         </div>
         <button className="ui red basic button" style={trashButtonStyle} onClick={() => removeTask(task.id)}>
           Remove
@@ -48,7 +63,7 @@ const TaskCard = ({task}) => {
     </div>
   );
 }
-
+ 
 export default TaskCard;
 
 

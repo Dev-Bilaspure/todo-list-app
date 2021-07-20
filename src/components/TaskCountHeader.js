@@ -6,9 +6,10 @@ const headerStyle = {
   borderRadius: "1em", 
   paddingTop: "0.8em",
   textAlign: "center",
-  marginTop: "1.5em",
   fontSize: "1.4rem",
-  paddingBottom: "1em"
+  marginBottom: "2rem",
+  paddingBottom: "1em",
+  width: "100%"
 }
 const TaskCountHeader = () => {
   const { tasks } = useContext(TaskContext);

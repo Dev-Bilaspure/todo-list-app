@@ -25,12 +25,14 @@ const TaskContextProvider = (props) => {
     setTasks([]);
   }
   const updateTask = (id, task, discribe) => {
-    for(let i=0;i<tasks.length;i++) {
-      if(tasks[i].id === id) {
-        tasks[i].todo = task;
-        tasks[i].discription = discribe;
+    let arr = tasks;
+    for(let i=0;i<arr.length;i++) {
+      if(arr[i].id === id) {
+        arr[i].todo = task;
+        arr[i].discription = discribe;
       }
     }
+    localStorage.setItem('tasks', JSON.stringify(arr))
   }
   return(
     <TaskContext.Provider value={{tasks, addTask, removeTask, removeAllTask, updateTask}}>

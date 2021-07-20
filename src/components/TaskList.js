@@ -12,17 +12,18 @@ const taskList = {
   paddingTop: "2em"
 }
 
-const TaskList = () => {
+const TaskList = ({sendCardInfo}) => {
   const { tasks, removeAllTask } = useContext(TaskContext);
 
   return (
     <div>
-    <TaskCountHeader/>
+    
     <div className="ui raised very padded text container segment" style={taskList}>
+    <TaskCountHeader/>
       {
         tasks.map(task => {
           return(
-              <TaskCard task={task} key={task.id}/>
+              <TaskCard task={task} key={task.id} sendCardInfo={sendCardInfo}/>
           );
         })
       }

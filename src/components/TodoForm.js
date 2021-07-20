@@ -63,9 +63,10 @@ const TodoForm = (props) => {
 
   return (
     <div className="ui raised very padded text container segment"style={inputStyle}>
+      <h1 style={{marginLeft: "0.3em", fontSize: "2.3rem"}}>Add Task:</h1>
       <form className="ui form" onSubmit={handleSubmit}>
-        <div className="field">
-          <label style={{fontSize: "1.5em", marginLeft: "0.87rem"}}>Enter the task todo</label>
+        <div className="field" style={{marginTop: "2.5em"}}>
+          <label style={{fontSize: "1.2em", marginLeft: "0.87rem"}}>Enter the task todo</label>
           <div className="ui raised very padded text container segment" style={inputBarDivStyle}>
             <input type="text"  required name="task" placeholder="Task todo..." style={inputBarStyle} onChange={(e) => {
               setTodo(e.target.value);
@@ -91,7 +92,7 @@ const TodoForm = (props) => {
           
         </div>
         <div className="ui card centered" style={submitButtonDivStyle}>
-            <button className="ui button green" type="submit" style={submitButtonStyle}>Submit</button>
+            <button className="ui button green" type="submit" style={submitButtonStyle}>Add</button>
         </div>
       </form>
       <div className="ui card centered" style={{width: "25%"}}>
