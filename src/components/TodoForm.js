@@ -8,7 +8,8 @@ const inputStyle = {
   marginBottom: "3em",
   paddingTop: "2em",
   paddingLeft: "2em",
-  paddingRight: "2em"
+  paddingRight: "2em",
+  paddingBottom: '9rem'
 }
 const submitButtonStyle = {
   width: "100%", 
@@ -17,8 +18,11 @@ const submitButtonStyle = {
   paddingTop: "0.57em"
 }
 const submitButtonDivStyle = {
-  marginTop: "2.5rem",
+  marginTop: "0rem",
   width: "25%",
+  float: 'right',
+  marginRight: '8rem',
+  marginTop: '3rem'
 }
 const inputBarDivStyle = {
   width: "100%",
@@ -62,7 +66,7 @@ const TodoForm = (props) => {
   }
 
   return (
-    <div className="ui raised very padded text container segment"style={inputStyle}>
+    <div className="ui raised very padded text container segment" style={inputStyle}>
       <h1 style={{marginLeft: "0.3em", fontSize: "2.3rem"}}>Add Task:</h1>
       <form className="ui form" onSubmit={handleSubmit}>
         <div className="field" style={{marginTop: "2.5em"}}>
@@ -88,14 +92,14 @@ const TodoForm = (props) => {
             </div>
           </div>
           
-
+        
           
         </div>
         <div className="ui card centered" style={submitButtonDivStyle}>
             <button className="ui button green" type="submit" style={submitButtonStyle}>Add</button>
         </div>
       </form>
-      <div className="ui card centered" style={{width: "25%"}}>
+      <div className="ui card centered" style={{width: "25%", float: 'left', marginTop: '0rem', marginLeft: '8rem', marginTop: '3rem'}}>
         <Link to="/todo-list-app/">
           <button className="ui button blue"  style={{fontSize: "1em", width: "100%"}}>
             Go To Todo List

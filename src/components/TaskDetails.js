@@ -14,7 +14,7 @@ const TaskDetails = ({cardInfo, history}) => {
   
   return (
     <div>
-      <div className="ui raised very padded text container segment" style={{marginTop: "3em", paddingLeft: "2em", paddingRight: "2em", paddingTop: "1.5em"}}>
+      <div className="ui raised very padded text container segment" style={{marginTop: "3em", paddingLeft: "2em", paddingRight: "2em", paddingTop: "1.5em", paddingBottom: '9em'}}>
         <h1 style={{fontSize: "2.3rem"}}>View/Update Task:</h1>
         <div style={{marginTop: "2em"}}>
         
@@ -44,14 +44,14 @@ const TaskDetails = ({cardInfo, history}) => {
             </div>
           </div>
 
-          <div className="ui card centered" style={{width: "15%", marginTop: "2.5em"}}>
+          <div className="ui card centered" style={{width: "15%", marginTop: "2.5em", float: "left", marginLeft: '13rem'}}>
             <button 
               className="ui button green"  
               style={{fontSize: "1em", width: "100%", paddingLeft: "0.2rem", paddingRight: "0.2rem"}}
               onClick={handleClickOk}
             >OK</button>
           </div>
-          <div className="ui card centered" style={{width: "23%", marginTop: "2.5em"}}>
+          <div className="ui card centered" style={{width: "23%", marginTop: "2.5em", float: "right", marginRight: '10rem'}}>
             <button 
               className="ui button red"  
               style={{fontSize: "1em", width: "100%", paddingLeft: "0.2rem", paddingRight: "0.2rem"}}
